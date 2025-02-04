@@ -9,8 +9,9 @@ int main() {
     float city01_area;
     float city01_pib;
     int city01_tourism;
-    float city01_density;
-    float city01_pib_per_capita;
+    double city01_density;
+    double city01_pib_per_capita;
+    double city01_superpower;
 
     // Coletando informações da cidade 01
     printf("Digite o código da cidade 01: ");
@@ -33,6 +34,7 @@ int main() {
 
     city01_density = city01_population / city01_area;
     city01_pib_per_capita = city01_pib / city01_population;
+    city01_superpower = city01_pib_per_capita + city01_area + city01_tourism + city01_density + city01_population + city01_pib + city01_tourism; 
 
     // Mostrando informações da cidade 01
     printf("\nCidade 01\n");
@@ -52,8 +54,9 @@ int main() {
     float city02_area;
     float city02_pib;
     int city02_tourism;
-    float city02_density;
-    float city02_pib_per_capita;
+    double city02_density;
+    double city02_pib_per_capita;
+    double city02_superpower;
 
     // Coletando informações da cidade 02
     printf("\nDigite o código da cidade 02: ");
@@ -76,6 +79,7 @@ int main() {
     
     city02_density = city02_population / city02_area;
     city02_pib_per_capita = city02_pib / city02_population;
+    city02_superpower = city02_pib_per_capita + city02_area + city02_tourism + city02_density + city02_population + city02_pib + city02_tourism;
 
     // Mostrando informações da cidade 02
     printf("\nCidade 02\n");
@@ -95,8 +99,9 @@ int main() {
     float city03_area;
     float city03_pib;
     int city03_tourism;
-    float city03_density;
-    float city03_pib_per_capita;
+    double city03_density;
+    double city03_pib_per_capita;
+    double city03_superpower;
 
     // Coletando informações da cidade 03
     printf("\nDigite o código da cidade 03: ");
@@ -119,6 +124,7 @@ int main() {
 
     city03_density = city03_population / city03_area;
     city03_pib_per_capita = city03_pib / city03_population;
+    city03_superpower = city03_pib_per_capita + city03_area + city03_tourism + city03_density + city03_population + city03_pib + city03_tourism;
 
     // Mostrando informações da cidade 03
     printf("\nCidade 03\n");
@@ -138,8 +144,9 @@ int main() {
     float city04_area;
     float city04_pib;
     int city04_tourism;
-    float city04_density;
-    float city04_pib_per_capita;
+    double city04_density;
+    double city04_pib_per_capita;
+    double city04_superpower;
 
     // Coletando informações da cidade 04
     printf("\nDigite o código da cidade 04: ");
@@ -162,7 +169,7 @@ int main() {
 
     city04_density = city04_population / city04_area;
     city04_pib_per_capita = city04_pib / city04_population;
-
+    city04_superpower = city04_pib_per_capita + city04_area + city04_tourism + city04_density + city04_population + city04_pib + city04_tourism;
 
     // Mostrando informações da cidade 04
     printf("\nCidade 04\n");
@@ -174,6 +181,35 @@ int main() {
     printf("Pontos turísticos: %d\n", city04_tourism);
     printf("Densidade: %.2f\n", city04_density);
     printf("PIB per capita: %.2f\n", city04_pib_per_capita);
+
+    //Mostrando as pontuações
+    printf("\nPontuações\n");
+    printf("Cidade 01: %.2f\n", city01_superpower);
+    printf("Cidade 02: %.2f\n", city02_superpower);
+    printf("Cidade 03: %.2f\n", city03_superpower);
+    printf("Cidade 04: %.2f\n", city04_superpower);
+
+    //Comparando Densidade Demografica
+    if (city01_density < city02_density && city01_density < city03_density && city01_density < city04_density) {
+        printf("\nCidade 01 tem a menor densidade demografica\n");
+    } else if (city02_density < city01_density && city02_density < city03_density && city02_density < city04_density) {
+        printf("\nCidade 02 tem a menor densidade demografica\n");
+    } else if (city03_density < city01_density && city03_density < city02_density && city03_density < city04_density) {
+        printf("\nCidade 03 tem a menor densidade demografica\n");
+    } else if (city04_density < city01_density && city04_density < city02_density && city04_density < city03_density) {
+        printf("\nCidade 04 tem a menor densidade demografica\n");
+    }
+
+    //Comparando pontuação
+    if (city01_superpower > city02_superpower && city01_superpower > city03_superpower && city01_superpower > city04_superpower) {
+        printf("\nCidade 01 tem a maior pontuação\n");
+    } else if (city02_superpower > city01_superpower && city02_superpower > city03_superpower && city02_superpower > city04_superpower) {
+        printf("\nCidade 02 tem a maior pontuação\n");
+    } else if (city03_superpower > city01_superpower && city03_superpower > city02_superpower && city03_superpower > city04_superpower) {
+        printf("\nCidade 03 tem a maior pontuação\n");
+    } else if (city04_superpower > city01_superpower && city04_superpower > city02_superpower && city04_superpower > city03_superpower) {
+        printf("\nCidade 04 tem a maior pontuação\n");
+    }
 
     return 0;
 }
